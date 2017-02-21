@@ -156,5 +156,36 @@
 	</dependencies>
   <build>
     <finalName>sixonone</finalName>
+	<plugins>
+		 <plugin>  
+                <groupId>org.apache.maven.plugins</groupId>  
+                <artifactId>maven-war-plugin</artifactId>  
+                <configuration>  
+                    <escapeString>\</escapeString>  
+                    <warName>${war.name}</warName>  
+                   <!-- <warSourceExcludes>src/main/resources/packaged/**</warSourceExcludes>  
+                    <webResources>  
+                        <resource>  
+                            <directory>src/main/resources/packaged</directory>  
+                            <targetPath>WEB-INF/classes</targetPath>  
+                            <filtering>true</filtering>  
+                            <includes>  
+                                <include>hibernate.properties</include>  
+                            </includes>  
+                        </resource>  
+                        <resource>  
+                            <directory>src/main/resources/packaged/tmp</directory>  
+                            <targetPath>WEB-INF/classes</targetPath>  
+                            <filtering>true</filtering>  
+                            <includes>  
+                                <include>applicationContext-init.xml</include>  
+                            </includes>  
+                        </resource>  
+                    </webResources>  -->
+                    <warSourceDirectory>src/main/webapp</warSourceDirectory>  
+                   <!-- <webXml>src/main/resources/packaged/tmp/web.xml</webXml>  -->
+                </configuration>  
+            </plugin>  
+		 </plugins>
   </build>
 </project>
