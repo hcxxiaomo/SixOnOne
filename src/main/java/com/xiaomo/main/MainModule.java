@@ -8,7 +8,7 @@ import org.nutz.mvc.ioc.provider.ComboIocProvider;
 @SetupBy(value=MainSetup.class)
 @IocBy(type=ComboIocProvider.class, args={"*js", "ioc/",
         "*anno", "com.xiaomo.main",
-//        "*tx", // 事务拦截 aop
+        "*tx", // 事务拦截 aop
         "*async"}) // 异步执行aop
 @Modules(scanPackage = true)
 public class MainModule {

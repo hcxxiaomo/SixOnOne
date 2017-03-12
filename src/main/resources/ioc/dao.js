@@ -6,7 +6,7 @@ var ioc = {
 		        paths : ["custom/"]
 		    }
 		}
-        /*,dataSource : {
+        ,dataSource : {
         	factory : "$conf#make",
         	args : ["com.alibaba.druid.pool.DruidDataSource", "db."],
             type : "com.alibaba.druid.pool.DruidDataSource",
@@ -22,9 +22,9 @@ var ioc = {
 //                validationQuery : "select 1" , // Oracle的话需要改一下
 //                maxActive : 100
 //            }
-        },*/
-//        dao : {
-//            type : "org.nutz.dao.impl.NutDao",
-//            args : [{refer:"dataSource"}]
-//        }
+        },
+        dao : {
+            type : "org.nutz.dao.impl.NutDao",
+            args : [{refer:"dataSource"}]
+        }
 };
