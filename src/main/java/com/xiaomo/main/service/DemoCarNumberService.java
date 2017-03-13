@@ -32,4 +32,8 @@ public class DemoCarNumberService {
 		 List<DemoCarNumber> list = dao.query(DemoCarNumber.class, Cnd.orderBy().desc("id"));
 		 return list;
 	 }
+	 
+	 public DemoCarNumber getDomeByhpzm(String hpzm){
+		return dao.fetch(DemoCarNumber.class, hpzm);
+	 }
 }

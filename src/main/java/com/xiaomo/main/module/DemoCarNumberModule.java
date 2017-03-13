@@ -35,7 +35,9 @@ public class DemoCarNumberModule {
 	 @Ok("jsp:jsp.result")
 	public List<DemoCarNumber>  add( @Param("..")DemoCarNumber demoCarNumber){
 		 log.info(demoCarNumber);
-		 demoCarNumberService.add(demoCarNumber);
+		 if (demoCarNumber.getCarNumberHpzm() != null) {
+			 demoCarNumberService.add(demoCarNumber);
+		}
 		 return  demoCarNumberService.query();
 //		return demoCarNumberService.add(demoCarNumber);
 	}
