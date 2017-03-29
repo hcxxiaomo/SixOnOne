@@ -134,6 +134,31 @@ public class CarInfoModule {
 					 + "</BasApprizequeueveh>"
 					 + "</body>"
 					 + "</root>";  
+		}else if(JkidEnum.Cxdzjkwb.getString().equals(jkid)){
+			return  "<root>"
+					 + "<head>"
+					 + "<code>1</code>"
+					 + "<message>数据下载成功</message>"
+					 + "</head>"
+					 + "<body>"
+					 + "<viosurveil>"
+					 + "<xh>告知11单号</xh>"
+					 + "<jdcxh>机11动车序号</jdcxh>"
+					 + "<hpzl>号牌11种类</hpzl>"
+					 + "<hphm>号牌11号码</hphm>"
+					 + "<wfxw>违法行为11</wfxw>"
+					 + "<jkbj>1</jkbj>"
+					 + "</viosurveil>"
+					 + "<viosurveil>"
+					 + "<xh>告知单22号</xh>"
+					 + "<jdcxh>机动22车序号</jdcxh>"
+					 + "<hpzl>号牌种22类</hpzl>"
+					 + "<hphm>号牌号22码</hphm>"
+					 + "<wfxw>违法行为22</wfxw>"
+					 + "<jkbj>0</jkbj>"
+					 + "</viosurveil>"
+					 + "</body>"
+					 + "</root>";  
 		}
 		 return null;
 	    }
