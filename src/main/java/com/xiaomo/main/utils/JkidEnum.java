@@ -21,6 +21,10 @@ public enum JkidEnum {
 	 * 读取机动车基本信息--机动车
 	 */
 	,Cxjdcjb("01C21")
+	/**
+	 * 读取机动车查封信息--机动车
+	 */
+	,Cxjdccf("01C29")
 	;
 
 	private String string;
