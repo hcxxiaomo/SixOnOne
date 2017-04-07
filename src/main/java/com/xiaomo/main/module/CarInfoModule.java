@@ -101,7 +101,7 @@ public class CarInfoModule {
 						 + "<fdjh>发动机号默认数据</fdjh>"
 						 + "<csys>车身颜色默认数据</csys>"
 						 + "<syr>机动车所有人默认数据</syr>"
-						 + "<ccdjrq>凯初次登记日期默认数据12fd</ccdjrq>"
+						 + "<ccdjrq>2014-03-01</ccdjrq>"
 						 + "<yxqz>2017-03-01</yxqz>"
 						 + "<qzbfqz>2017-04-01</qzbfqz>"
 						 + "<zt>机动车状态2默认数据</zt>"
