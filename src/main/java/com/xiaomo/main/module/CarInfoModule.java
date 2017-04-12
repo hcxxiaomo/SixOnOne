@@ -46,7 +46,7 @@ public class CarInfoModule {
 			 Element root = document.getRootElement();  
 //        System.out.println("Root: " + root.getName()); 
 			 Element QueryCondition = root.element("QueryCondition");
-			 Element hpzm = QueryCondition.element("hpzm");
+			 Element hpzm = QueryCondition.element("hphm");
 			 String hpzmStr = hpzm.getText();
 //        Element message = head.element("message");
 //        String messageStr = message.getText();
