@@ -15,6 +15,7 @@ import javax.xml.ws.Service;
 
 import org.junit.Test;
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 
 public class TestWebService {
 	
@@ -73,7 +74,7 @@ public class TestWebService {
 	public void test() throws Exception{
 		 // {*} * 为图片中的数字  
         String ns = "http://service.xiaomo.com";  // {1}  
-        String wsdlUrl = "http://localhost:8080/WebServiceTest/services/HelloService?wsdl";  // {2}  
+        String wsdlUrl = "http://localhost:8080/HelloWebService/services/HelloService?wsdl";  // {2}  
         //1、创建服务(Service)    
         URL url = new URL(wsdlUrl);    
         QName sname = new QName(ns, "HelloService"); // {3}  
@@ -94,7 +95,7 @@ public class TestWebService {
         // {6}  
         ele.addChildElement("xtlb", "ser").setValue("151****3701");      
         ele.addChildElement("jkxlh", "ser").setValue("测试!");      
-        msg.writeTo(System.out);    
+//        msg.writeTo(System.out);    
         System.out.println("\n invoking.....");    
                                 
         //5、通过Dispatch传递消息,会返回响应消息    
@@ -104,7 +105,8 @@ public class TestWebService {
                         
         //6、响应消息处理,将响应的消息转换为dom对象    
         Document doc = response.getSOAPPart().getEnvelope().getBody().extractContentAsDocument();    
-        String str = doc.getElementsByTagName("ns:return").item(0).getTextContent();  // {7}  
+        Node node = doc.getElementsByTagName("ns:return").item(0);
+        String str = node.getTextContent();  // {7}  
         System.out.println(str);    
 	}
 
