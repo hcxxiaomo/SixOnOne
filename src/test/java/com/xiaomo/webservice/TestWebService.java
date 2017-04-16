@@ -112,15 +112,15 @@ public class TestWebService {
 	@Test
 	public void test2() throws Exception{
 		// {*} * 为图片中的数字  
-		String ns = "http://service.xiaomo.com";  // {1}  
-		String wsdlUrl = "http://localhost:8080/HelloWebService/services/HelloService?wsdl";  // {2}  
+		String ns = "http://service.xiaomo.com/";  // {1}  
+		String wsdlUrl = "http://127.0.0.1:8080/hello?wsdl";  // {2}  
 		//1、创建服务(Service)    
 		URL url = new URL(wsdlUrl);    
-		QName sname = new QName(ns, "HelloService"); // {3}  
+		QName sname = new QName(ns, "HelloServiceService"); // {3}  
 		Service service = Service.create(url, sname);  
 		
 		//2、创建Dispatch    
-		Dispatch<SOAPMessage> dispatch = service.createDispatch(new QName(ns, "HelloServiceHttpSoap11Endpoint"), SOAPMessage.class, Service.Mode.MESSAGE); // {4}    
+		Dispatch<SOAPMessage> dispatch = service.createDispatch(new QName(ns, "HelloServicePort"), SOAPMessage.class, Service.Mode.MESSAGE); // {4}    
 		
 		//3、创建SOAPMessage    
 		SOAPMessage msg = MessageFactory.newInstance(SOAPConstants.SOAP_1_1_PROTOCOL).createMessage();    
@@ -128,23 +128,23 @@ public class TestWebService {
 		SOAPBody body = envelope.getBody();    
 		
 		//4、创建QName来指定消息中传递数据    
-		QName ename = new QName(ns, "queryObjectOut", null);//<nn:add xmlns="xx"/>  // {5}  
+		QName ename = new QName(ns, "queryObjectOut","ser");//<nn:add xmlns="xx"/>  // {5} 有前缀的ser呢！ 
 		SOAPBodyElement ele = body.addBodyElement(ename);    
 		// 传递参数    
 		// {6}  
-		ele.addChildElement("xtlb", null).setValue("151****3701");      
-		ele.addChildElement("jkxlh", null).setValue("测试!");      
+		ele.addChildElement("xtlb").setValue("151****3701");      
+		ele.addChildElement("jkxlh").setValue("测试!");      
         msg.writeTo(System.out);    
-//		System.out.println("\n invoking.....");    
+		System.out.println("\n invoking.....");    
 		
 		//5、通过Dispatch传递消息,会返回响应消息    
-//		SOAPMessage response = dispatch.invoke(msg);    
-//        response.writeTo(System.out);    
-//		System.out.println();    
+		SOAPMessage response = dispatch.invoke(msg);    
+        response.writeTo(System.out);    
+		System.out.println();    
 		
 		//6、响应消息处理,将响应的消息转换为dom对象    
 //		Document doc = response.getSOAPPart().getEnvelope().getBody().extractContentAsDocument();    
-//		Node node = doc.getElementsByTagName("ns:return").item(0);
+//		Node node = doc.getElementsByTagName("result").item(0);
 //		String str = node.getTextContent();  // {7}  
 //		System.out.println(str);    
 	}
